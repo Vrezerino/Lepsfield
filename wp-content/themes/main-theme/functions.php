@@ -8,8 +8,8 @@ function files() {
   wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=yourkeygoeshere', NULL, '1.0', true);
 
   wp_enqueue_script('main-lepsfield-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
-  wp_enqueue_style('our-main-styles-vendor', get_theme_file_uri('/build/index.css'));
-  wp_enqueue_style('our-main-styles', get_theme_file_uri('/build/style-index.css'));
+  wp_enqueue_style('our-main-styles-vendor', get_theme_file_uri('index.css'));
+  wp_enqueue_style('our-main-styles', get_theme_file_uri('style.css'));
 
   wp_localize_script('main-lepsfield-js', 'lepsfieldData', array(
     'root_url' => get_site_url(),
