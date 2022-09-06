@@ -54,12 +54,24 @@ while (have_posts()) {
 		<?php
 		} ?>
 		<div class="generic-content">
-			<?php the_content(); 
-			foreach ($arr as $product) echo "$product->name<br>";
-			?>
+			<?php the_content();
+			if (is_page(16) && $arr) { // If the current page is the Online Store...
+				foreach ($arr as $product) {
+					echo "
+					<div class=\"product\">
+						<span>
+							$product->name
+						</span>
+						<span>
+							$$product->price
+						</span>
+					</div>";
+				}
+			} ?>
 		</div>
 	</div>
 <?php
+
 }
 get_footer();
 ?>
