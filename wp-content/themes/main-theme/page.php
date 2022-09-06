@@ -55,8 +55,8 @@ while (have_posts()) {
 		} ?>
 		<div class="generic-content">
 			<?php the_content();
-			if (is_page(16) && $arr) { // If the current page is the Online Store...
-				foreach ($arr as $product) {
+			if (is_page(16) && $storeProducts) { // If the current page is the Online Store and products were fetched from server into global variable...
+				foreach ($storeProducts as $product) {
 					echo "
 					<div class=\"product\">
 						<span>

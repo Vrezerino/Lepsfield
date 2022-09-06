@@ -44,11 +44,11 @@ class Product {
 	}
 }
 
-$arr = [];
+$storeProducts = [];
 
 function getProducts() {
 	if (is_page(16)) {
-		global $arr;
+		global $storeProducts;
 		$mysqli = new mysqli("localhost", "root", "", "wp");
 		if ($mysqli->connect_error) die("DB connection failed:" . $mysqli->connect_error);
 
@@ -57,7 +57,7 @@ function getProducts() {
 
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {
-				array_push($arr, new Product($row["name"], $row["price"]));
+				array_push($storeProducts, new Product($row["name"], $row["price"]));
 			}
 		}
 		$mysqli->close();
