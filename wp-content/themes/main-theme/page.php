@@ -8,7 +8,7 @@ while (have_posts()) {
 		<div class="page-banner__content container container--narrow">
 			<h1 class="page-banner__title"><?= the_title(); ?></h1>
 			<div class="page-banner__intro">
-				
+
 			</div>
 		</div>
 	</div>
@@ -30,6 +30,7 @@ while (have_posts()) {
 					</span>
 				</p>
 			</div>
+
 		<?php }
 
 		$children = get_pages(array('child_of' => get_the_ID())); # 
@@ -50,13 +51,15 @@ while (have_posts()) {
 				</ul>
 			</div>
 
-			<div class="generic-content">
-				<?= the_content(); ?>
-			</div>
+		<?php
+		} ?>
+		<div class="generic-content">
+			<?php the_content(); 
+			foreach ($arr as $product) echo "$product->name<br>";
+			?>
+		</div>
 	</div>
-
 <?php
-		}
-	}
-	get_footer();
+}
+get_footer();
 ?>
