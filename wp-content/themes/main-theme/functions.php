@@ -32,6 +32,8 @@ function remove_admin_login_header() {
 
 add_action('get_header', 'remove_admin_login_header');
 
+///////////////// Online Store functions
+
 class Product {
 	public string $name;
 	public float $price;
